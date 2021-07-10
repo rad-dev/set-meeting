@@ -25,6 +25,8 @@ public class Person {
     this.name = name;
   }
 
-
-
+  public boolean equals(Person anotherPerson) {
+    return this.name.equals(anotherPerson.getName()) &&
+            this.email.equals(anotherPerson.getEmail());
+  }
 }

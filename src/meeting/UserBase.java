@@ -23,6 +23,7 @@ public class UserBase {
    }
 
    public Person getUser(String email) {
-       return  users.stream().filter(user -> email.equals(user.getEmail())).findFirst().orElse(null);
+       return  users.stream().filter(user ->
+               email.equals(user.getEmail())).findFirst().orElse(null);
    }
 }
