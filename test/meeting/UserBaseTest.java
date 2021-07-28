@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
+
 import java.util.InvalidPropertiesFormatException;
 
 public class UserBaseTest {
@@ -39,5 +40,15 @@ public class UserBaseTest {
             e.printStackTrace();
         }
         Assertions.assertThrows(InvalidPropertiesFormatException.class, () -> users.addUser(userB));
+    }
+
+    @Test
+    @DisplayName("Can get user by email")
+    void canGetUserByEmail() throws InvalidPropertiesFormatException {
+        String email = "j.fields@company.com";
+        Person userA = new Person("Joe Fields", email );
+        users.addUser(userA);
+
+       Assertions.assertEquals(userA, users.getUser(email));
     }
 }
